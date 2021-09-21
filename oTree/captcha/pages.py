@@ -24,9 +24,12 @@ class Captcha(Page):
 class ResultsWaitPage(WaitPage):
     pass
 
+class Decision(Page):
+    pass
+
 
 class Results(Page):
     pass
 
 
-page_sequence = [Captcha, Results]
+page_sequence = [Decision, Captcha, Results]

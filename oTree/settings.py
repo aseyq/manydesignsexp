@@ -2,10 +2,18 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-       name='capthca',
-       display_name="Captcha",
+       name='manydesigns_comp',
+       display_name="ManyDesigns Treatment - Competition",
        num_demo_participants=10,
-       app_sequence=['captcha']
+       app_sequence=['captcha'],
+       competition=True,
+    ),
+    dict(
+       name='manydesigns_nocomp',
+       display_name="ManyDesigns Treatment - Control",
+       num_demo_participants=10,
+       app_sequence=['captcha'],
+       competition=False,
     ),
 ]
 

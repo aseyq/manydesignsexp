@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Stage 3 - The Decision Stage
+{% endblock %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+ #custom-handle {
+     width: 3em;
+     height: 1.6em;
+     top: 50%;
+     margin-top: -.8em;
+     text-align: center;
+     line-height: 1.6em;
+ }
+</style>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+ $( function() {
+     var handle = $( "#custom-handle" );
+     $( "#slider" ).slider({
+         create: function() {
+             handle.text($( this ).slider( "value" ) + "%");
+         },
+         slide: function( event, ui ) {
+             handle.text( ui.value + "%" );
+         }
+     });
+ } );
+</script>
+{% endblock %}
+{% block content %}
+
+In the Decision Stage, you will be offered the opportunity to take away a percentage of the
+{% if session.config.competition %} competitors 
+{% else %} group members 
+{% endif %}
+
+<div id="slider" class="m-5">
+  <div id="custom-handle" class="ui-slider-handle"></div>
+</div>
+
+
+{% next_button %}
+
+{% endblock %}
