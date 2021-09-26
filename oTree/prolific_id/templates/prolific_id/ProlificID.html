@@ -1,0 +1,15 @@
+ii{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Prolific ID
+{% endblock %}
+
+{% block content %}
+<p>
+Please enter your Prolific ID. Your Prolific ID should consists of 24 alphanumeric characters.
+</p>
+    {% formfields %}
+    {% next_button %}
+
+{% endblock %}
