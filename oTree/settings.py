@@ -2,18 +2,18 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-       name='manydesigns_comp',
-       display_name="ManyDesigns Treatment - Competition",
-       num_demo_participants=10,
-       app_sequence=['captcha'],
-       competition=True,
+        name='manydesigns_comp',
+        display_name="ManyDesigns Treatment - Competition",
+        competition=True,
+        num_demo_participants=10,
+        app_sequence=['prolific_id', 'captcha', 'decision'],
     ),
     dict(
-       name='manydesigns_nocomp',
-       display_name="ManyDesigns Treatment - Control",
-       num_demo_participants=10,
-       app_sequence=['captcha'],
-       competition=False,
+        name='manydesigns_nocomp',
+        display_name="ManyDesigns Treatment - Control",
+        competition=False,
+        num_demo_participants=10,
+        app_sequence=['prolific_id', 'captcha', 'decision'],
     ),
 ]
 

@@ -39,16 +39,26 @@ Stage 3 - The Decision Stage
 </script>
 {% endblock %}
 {% block content %}
-
+  <div class="container">
+    <div class="row">
 In the Decision Stage, you will be offered the opportunity to take away a percentage of the
 {% if session.config.competition %} competitors 
 {% else %} group members 
 {% endif %}
+    </div>
+    <div class="row mt-4">
+I would like to take XX% of each of the other participants. The amount they earn will be XX% of the what they earned from the effort stage.
+    </div>
+    <div class="row">
 
-<div id="slider" class="m-5">
-  <div id="custom-handle" class="ui-slider-handle"></div>
-</div>
+      <div class="col">
+      <div id="slider" class="m-5">
+        <div id="custom-handle" class="ui-slider-handle"></div>
+      </div>
 
+      </div>
+    </div>
+  </div>
 
 {% next_button %}
 

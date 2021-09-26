@@ -6,7 +6,7 @@ import random
 
 class Captcha(Page):
 #    timeout_seconds = 240
-    timeout_seconds = 24
+    timeout_seconds = 60 * 3
 
     form_model = 'player'
     form_fields = ['user_input']
@@ -21,15 +21,5 @@ class Captcha(Page):
 
 
 
-class ResultsWaitPage(WaitPage):
-    pass
 
-class Decision(Page):
-    pass
-
-
-class Results(Page):
-    pass
-
-
-page_sequence = [Decision, Captcha, Results]
+page_sequence = [Captcha]
