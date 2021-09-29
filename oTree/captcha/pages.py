@@ -5,6 +5,7 @@ from .models import Constants
 import random
 import time
 class Grouping(WaitPage):
+    after_all_players_arrive = "assign_names_group"
     title_text = "Please stay on this screen - The tasks will start soon"
     body_text = ""
 
@@ -19,7 +20,9 @@ class Grouping(WaitPage):
     def js_vars(self):
         return dict(arrival_time=self.participant.vars['arrival_time'], current_time=time.time(),timeout_mins=self.session.config['matching_timeout_mins'])
 
-
+    def before_next_page(self):
+        print("names are assigning")
+        self.player.assign_names()
 
 
 class Captcha(Page):

@@ -19,6 +19,7 @@ matching_timeout_mins = 5
 random_wait_min_sec = 1
 random_wait_max_sec = 3
 showup_fee = 1.30
+currency_conversion = 0.1
 
 SESSION_CONFIGS = [
     dict(
@@ -43,7 +44,9 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1.00, participation_fee=0.00, doc="",
+    real_world_currency_per_point=currency_conversion, 
+    participation_fee=0.00, 
+    doc="",
     num_demo_participants=12,
     completion_url=completion_url,
     matching_timeout_mins = matching_timeout_mins,

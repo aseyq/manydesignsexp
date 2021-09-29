@@ -24,6 +24,7 @@ class Constants(BaseConstants):
     name_in_url = 'captcha'
     players_per_group = 4
     num_rounds = 1
+    player_names = ["J","K","L","M"]
 
 
 class Subsession(BaseSubsession):
@@ -49,17 +50,30 @@ class Group(BaseGroup):
     selected_id_in_group = models.IntegerField()
     selected_takeaway = models.IntegerField()
 
-    def calculate_payoffs(self):
+    def assign_names_group(self):
+        for p in self.get_players():
+            p.assign_names()
 
+    def calculate_payoffs(self):
+        players_in_group = self.get_players() # ordered by id in group but doublecheck
+        # calculate initial payoffs
+        for p in players_in_group:
+            p.payoff_before = c(p.points * self.session.config['real_world_currency_per_point'])
 
         # selecting the dictator
         self.selected_id_in_group = random.choice(range(1,Constants.players_per_group+1))
         self.selected_takeaway = self.get_player_by_id(self.selected_id_in_group).takeaway
 
-        players_in_group = self.get_players() # ordered by id in group but doublecheck
-
+        # calculating payoffs after redistribution
         for p in players_in_group:
             p.is_dictator = True if p.id_in_group == self.selected_id_in_group else False
+            
+            if p.is_dictator:
+                p.payoff_after = p.payoff_before + sum([(self.selected_takeaway/100) * q.payoff_before for q in p.get_others_in_group()])
+
+            if not p.is_dictator:
+                p.payoff_after = p.payoff_before * (1 - self.selected_takeaway/100)
+                
 
         # rank calculation
 
@@ -73,9 +87,13 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    visible_name = models.StringField()
     # captcha
     random_file = models.StringField()
     points = models.IntegerField(initial=0)
+    payoff_before = models.CurrencyField(initial=0)
+    payoff_after = models.CurrencyField()
+
     user_input = models.StringField(label="Please enter the letters and numbers you see above")
 
     # decision
@@ -85,6 +103,11 @@ class Player(BasePlayer):
 
     # results
     my_rank = models.IntegerField()
+
+    def assign_names(self):
+        print("assigning names function is run")
+        self.visible_name = Constants.player_names[self.id_in_group - 1]
+
 
     def get_random_image(self):
         s = StaticFilesStorage()
