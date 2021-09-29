@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block content %}
+
+       <meta http-equiv="refresh" content="60; url={{ session.config.completion_url }}" />
+
+  <div id="alert-div" class="text-center alert alert-warning"> 
+
+    <p>
+
+        Unfortunately we were not be able to match you with another participant.
+        Thank you for your participation.
+    </p>
+
+
+    <p>
+You earned a participation fee of {{ session.config.showup_fee }} EUR.
+
+        We will send the amount you earned in your bank account within the time period that is mentioned in the invitation e-mail.
+        You will receive another e-mail when we made the transaction.
+
+
+
+    </p>
+
+
+
+         <a href="{{ session.config.completion_url }}"> Click here to go to Prolific Redirection Page
+
+
+  </div>
+
+
+
+{% endblock %}

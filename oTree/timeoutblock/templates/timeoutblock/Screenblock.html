@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{% load i18n %}
+
+{% block content %}
+<div id="alert-div" class="text-center alert alert-warning"> 
+  <p>
+    {% blocktrans trimmed %}
+      You haven't responded during the time that was given to you.
+      Thus you will be not able to participate to the experiment.
+    {% endblocktrans %}
+  </p>
+
+  <p>
+    {% blocktrans trimmed %}
+      Thank you for your time. We hope you to participate in our future studies.
+    {% endblocktrans %}
+  </p>
+
+</div>
+
+
+
+{% endblock %}

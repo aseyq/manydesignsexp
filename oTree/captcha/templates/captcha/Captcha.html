@@ -34,8 +34,11 @@
    function sendAnswer() {
        liveSend(document.getElementById('id_user_input').value);
     document.getElementById("submitButton").disabled = true;
-    setTimeout(function() {
-        document.getElementById("submitButton").disabled = false;
+       document.getElementById("id_user_input").focus();
+       setTimeout(function() {
+           document.getElementById("submitButton").disabled = false;
+
+        
     }, 500);
    } 
 
@@ -49,7 +52,7 @@
        $('#alert_next_captcha').fadeTo(500,0);
 
    }
-/*
+///*
 // To make enter as submit
    $(function() {
        $("form input").keypress(function (e) {
@@ -62,6 +65,6 @@
        });
    });
 
-*/
+//*/
   </script>
 {% endblock %}

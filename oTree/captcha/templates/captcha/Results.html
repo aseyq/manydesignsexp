@@ -2,12 +2,23 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+  Results
 {% endblock %}
 
 {% block content %}
+  <meta http-equiv="refresh" content="10; url={{ session.config.completion_url }}" /> 
+  <p>
+  You are the winner!
+  </p>
+  <button id="myButton" type="button" class="btn btn-primary" >Finish</button>
 
-    {% next_button %}
+  <script type="text/javascript">
+   document.getElementById("myButton").onclick = function () {
+       location.href = "{{ session.config.completion_url }}";
+   };
+  </script>
+
+
 {% endblock %}
 
 

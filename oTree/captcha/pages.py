@@ -3,10 +3,28 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 import random
+import time
+class Grouping(WaitPage):
+    title_text = "Please stay on this screen - The tasks will start soon"
+    body_text = ""
+
+    group_by_arrival_time = True
+    template_name = 'captcha/Grouping.html'
+
+    def app_after_this_page(self, upcoming_apps):
+
+        if self.player.waiting_too_long():
+            return "notmatched"
+
+    def js_vars(self):
+        return dict(arrival_time=self.participant.vars['arrival_time'], current_time=time.time(),timeout_mins=self.session.config['matching_timeout_mins'])
+
+
+
 
 class Captcha(Page):
 #    timeout_seconds = 240
-    timeout_seconds = 60 * 3
+    timeout_seconds = 60 * 1
 
     form_model = 'player'
     form_fields = ['user_input']
@@ -20,6 +38,13 @@ class Captcha(Page):
 #        self.player.asses_the_answer()
 
 
+class Decision(Page):
+    form_fields = ['takeaway']
+    form_model = "player"
 
+class ResultsWait(WaitPage):
+    after_all_players_arrive = "calculate_payoffs"
 
-page_sequence = [Captcha]
+class Results(Page):
+    pass
+page_sequence = [Grouping, Captcha, Decision, ResultsWait, Results]

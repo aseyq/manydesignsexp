@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-11 17:57+0200\n"
+"PO-Revision-Date: 2021-03-10 16:41+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: .\wvot\notmatched\templates\notmatched\NotMatched.html:12
+msgid ""
+"Unfortunately we were not be able to match you with another participant. "
+"Thank you for your participation."
+msgstr ""
+"Leider konnten wir Sie keiner Gruppe von Teilnehmenden zuordnen. Vielen Dank "
+"für Ihre Teilnahme."
+
+#: .\wvot\notmatched\templates\notmatched\NotMatched.html:20
+msgid "You earned a participation fee of"
+msgstr "Sie erhalten folgende Teilnahmevergütung"
+
+#: .\wvot\notmatched\templates\notmatched\NotMatched.html:21
+msgid ""
+"We will send the amount you earned in your bank account within the time "
+"period that is mentioned in the invitation e-mail. You will receive another "
+"e-mail when we made the transaction."
+msgstr ""
+"Wir werden Ihnen den Betrag, den Sie in diesem Experiment verdient haben, "
+"innerhalb der in der E-Mail angegebenen Zeit überweisen. Sie werden noch "
+"eine E-Mail von uns erhalten, nachdem wir die Transaktion abgeschlossen "
+"haben."
+
+#: .\wvot\notmatched\templates\notmatched\NotMatched.html:26
+msgid "You can close this page whenever you'd like."
+msgstr "Sie können diese Seite schließen, wann immer Sie möchten."
