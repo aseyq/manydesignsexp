@@ -13,6 +13,7 @@ from otree.api import (
 )
 import time
 from scipy.stats import rankdata
+from .filenames import filenames
 author = 'Your name here'
 
 doc = """
@@ -110,9 +111,9 @@ class Player(BasePlayer):
 
 
     def get_random_image(self):
-        s = StaticFilesStorage()
-        file_list=list(get_files(s, location='captchas'))
-        random_file = random.choice(file_list).split('/',1)[-1]
+#        s = StaticFilesStorage()
+#        file_list=list(get_files(s, location='captchas'))
+        random_file = random.choice(filenames).split('/',1)[-1]
         self.random_file = random_file
         return random_file
 
