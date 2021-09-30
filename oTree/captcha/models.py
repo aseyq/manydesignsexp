@@ -78,11 +78,30 @@ class Group(BaseGroup):
 
         # rank calculation
 
-        points = [p.points + random.uniform(0,0.5) for p in players_in_group]
-        ranks = len(points) +1 - rankdata(points)
+        payoffs_after = [p.payoff_after + random.uniform(0,0.5) for p in players_in_group]
+        ranks = len(payoffs_after) +1 - rankdata(payoffs_after)
 
         for p in players_in_group:
-            p.my_rank = ranks[p.id_in_group-1]
+            p.rank = ranks[p.id_in_group-1]
+
+    def get_performance_data_ranked(self):
+        players = self.get_players()
+        players_ranked = sorted(players, key=lambda p: p.rank)
+
+        payoffs = [p.payoff_after for p in players_ranked]
+        names = [p.visible_name for p in players_ranked]
+        ids = [p.id_in_group for p in players_ranked]
+
+        return dict(payoffs=payoffs, names=names, ids=ids)
+
+    def get_performance_data_alph(self):
+        players = self.get_players()
+
+        payoffs = [p.payoff_after for p in players]
+        names = [p.visible_name for p in players]
+        ids = [p.id_in_group for p in players]
+
+        return dict(payoffs=payoffs, names=names, ids=ids)
 
 
 
@@ -103,7 +122,7 @@ class Player(BasePlayer):
     is_dictator = models.BooleanField()
 
     # results
-    my_rank = models.IntegerField()
+    rank = models.IntegerField()
 
     def assign_names(self):
         print("assigning names function is run")

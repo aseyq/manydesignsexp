@@ -49,5 +49,11 @@ class ResultsWait(WaitPage):
     after_all_players_arrive = "calculate_payoffs"
 
 class Results(Page):
-    pass
+    def vars_for_template(self):
+        ranked = self.group.get_performance_data_ranked()
+        alph = self.group.get_performance_data_alph()
+
+        return dict(ranked=ranked, alph=alph)
+
+
 page_sequence = [Grouping, Captcha, Decision, ResultsWait, Results]
