@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Task Instructions
+{% endblock %}
+
+{% block content %}
+
+  <p>
+    In this task, you will be shown a series of captchas, i.e. an image of a sequence of numbers and letters. You should try to input these letters in the given field. You will have 90 seconds to input as many correct sequence as possible. After each input, whether your entry was correct or not, you will be shown another captcha. For every correct answer you will receive an additional 5 Cent of a Pound as bonus payment at the end of the experiment.
+  </p>
+  Below you see acreenshot of the task: <br>
+  <img src="{% static 'captcha_individual/captcha_individual.png' %}"><br>
+  <p>
+Click Next to continue
+  </p>
+  {% next_button %}
+  <style>
+    img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 500px;
+    }
+  </style>
+{% endblock %}

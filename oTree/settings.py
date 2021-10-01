@@ -44,6 +44,13 @@ SESSION_CONFIGS = [
         app_sequence=common_app_sequence,
 
     ),
+    dict(
+        name='captcha_individually',
+        display_name="Captcha Individual",
+        competition=False,
+        app_sequence=['prolific_id', 'captcha_individual'],
+        real_world_currency_per_point=0.05,
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
