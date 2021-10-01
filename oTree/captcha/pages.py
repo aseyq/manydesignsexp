@@ -27,7 +27,7 @@ class Grouping(WaitPage):
 
 class Captcha(Page):
     def get_timeout_seconds(self):
-        return self.session.config['instructions_page_timeout_seconds']
+        return self.session.config['captcha_page_timeout_seconds']
 
     form_model = 'player'
     form_fields = ['user_input']
