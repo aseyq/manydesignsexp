@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+The Effort Stage
+{% endblock %}
+
+{% block content %}
+<p> By clicking the <kbd> Next </kbd> button you will start playing <strong>the effort stage</strong>. 
+</p>
+<p>
+  Your name will be shown as <strong>Player {{ player.visible_name }}</strong>. 
+  Other 
+{% if session.config.competition %}
+competitors
+{% else %}
+group members
+{% endif %}
+ in your group are Player {{ others_names.0}}, Player {{ others_names.1}}, Player {{ others_names.2}}
+</p>
+
+{% next_button %}
+{% endblock %}

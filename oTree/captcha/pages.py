@@ -25,6 +25,18 @@ class Grouping(WaitPage):
         self.player.assign_names()
 
 
+class Matched(Page):
+    def get_timeout_seconds(self):
+        return self.session.config['matched_page_timeout_seconds']
+
+    def vars_for_template(self):
+        others = self.player.get_others_in_group()
+        others_names = [p.visible_name for p in others]
+
+        return dict(others_names=others_names)
+
+
+
 class Captcha(Page):
     def get_timeout_seconds(self):
         return self.session.config['captcha_page_timeout_seconds']
@@ -69,4 +81,4 @@ class Results(Page):
         return dict(ranked=ranked, alph=alph)
 
 
-page_sequence = [Grouping, Captcha, Decision, ResultsWait, Results]
+page_sequence = [Grouping, Matched, Captcha, Decision, ResultsWait, Results]

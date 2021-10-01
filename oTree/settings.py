@@ -22,10 +22,11 @@ currency_conversion = 0.1
 matching_timeout_mins = 10 # minutes
 beforegrouping_page_timeout_seconds = 300 # seconds
 prolific_id_page_timeout_seconds = 180 # seconds
-results_page_redir_sec = 4 # seconds
+results_page_redir_sec = 180 # seconds
 decision_page_timeout_seconds = 300 # seconds
 instructions_page_timeout_seconds = 300# seconds
 captcha_page_timeout_seconds = 90 # seconds
+matched_page_timeout_seconds = 90 # seconds
 
 SESSION_CONFIGS = [
     dict(
@@ -65,7 +66,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     captcha_page_timeout_seconds = captcha_page_timeout_seconds,
     prolific_id_page_timeout_seconds = prolific_id_page_timeout_seconds,
     beforegrouping_page_timeout_seconds = beforegrouping_page_timeout_seconds,
-
+    matched_page_timeout_seconds = matched_page_timeout_seconds,
 )
 
 ROOMS = [
