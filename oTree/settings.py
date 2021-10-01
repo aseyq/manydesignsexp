@@ -20,13 +20,14 @@ showup_fee = 1.30
 currency_conversion = 0.1
 
 matching_timeout_mins = 10 # minutes
+
 beforegrouping_page_timeout_seconds = 300 # seconds
-prolific_id_page_timeout_seconds = 180 # seconds
+prolific_id_page_timeout_seconds = 240 # seconds
 results_page_redir_sec = 180 # seconds
-decision_page_timeout_seconds = 30000 # seconds
+decision_page_timeout_seconds = 240 # seconds
 instructions_page_timeout_seconds = 300# seconds
 captcha_page_timeout_seconds = 90 # seconds
-matched_page_timeout_seconds = 90 # seconds
+matched_page_timeout_seconds = 15 # seconds
 
 SESSION_CONFIGS = [
     dict(
