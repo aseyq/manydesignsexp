@@ -2,12 +2,10 @@ from os import environ
 
 
 common_app_sequence = [
-#    'prolific_id', 
+    'prolific_id', 
     'instructions',
     'beforegrouping',
-#    'grouping', ## REMOVED
     'captcha', 
-#    'decision', ## REMOVED
     'notmatched',
     'prolific_redirect',
     'timeoutblock',
@@ -15,11 +13,19 @@ common_app_sequence = [
 
 # Parameters - Also should be added to SESSION_CONFIGS or SESSION_CONFIG_DEFAULTS
 completion_url = "https://app.prolific.co/submissions/complete?cc=572FB13C"
-matching_timeout_mins = 5
+
 random_wait_min_sec = 1
 random_wait_max_sec = 3
 showup_fee = 1.30
 currency_conversion = 0.1
+
+matching_timeout_mins = 10 # minutes
+beforegrouping_page_timeout_seconds = 300 # seconds
+prolific_id_page_timeout_seconds = 180 # seconds
+results_page_redir_sec = 4 # seconds
+decision_page_timeout_seconds = 300 # seconds
+instructions_page_timeout_seconds = 300# seconds
+captcha_page_timeout_seconds = 90 # seconds
 
 SESSION_CONFIGS = [
     dict(
@@ -49,11 +55,30 @@ SESSION_CONFIG_DEFAULTS = dict(
     doc="",
     num_demo_participants=12,
     completion_url=completion_url,
+    results_page_redir_sec = results_page_redir_sec,
     matching_timeout_mins = matching_timeout_mins,
     random_wait_min_sec = random_wait_min_sec,
     random_wait_max_sec = random_wait_max_sec,
     showup_fee = showup_fee,
+    decision_page_timeout_seconds = decision_page_timeout_seconds,
+    instructions_page_timeout_seconds = instructions_page_timeout_seconds,
+    captcha_page_timeout_seconds = captcha_page_timeout_seconds,
+    prolific_id_page_timeout_seconds = prolific_id_page_timeout_seconds,
+    beforegrouping_page_timeout_seconds = beforegrouping_page_timeout_seconds,
+
 )
+
+ROOMS = [
+    dict(
+        name='study_LdLEdcGEqDb',
+        display_name='ManyDesigns - Control',
+    ),
+    dict(
+        name='study_NdLEdcGEqDb',
+        display_name='ManyDesigns - Competition'
+    ),
+]
+
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans

@@ -23,12 +23,11 @@
    }
   </style>
 <body>
+  <div class="container">
   <h3>
-    {% blocktrans trimmed %}
       Please do not switch screens during the experiment.
-    {% endblocktrans %}
   </h3>
-
+  </div>
   <div id="myProgress">
     <div id="myBar"></div>
   </div>
@@ -68,6 +67,20 @@
 
   </script>
 
+  <style>
+   .otree-timer {
+       display: none;
+   }
+  </style>
 
+  <script>
+   $(function () {
+       $('.otree-timer__time-left').on('update.countdown', function (event) {
+           if (event.offset.totalSeconds === 10) {
+               $('.otree-timer').show();
+           }
+       });
+   });
+  </script>
 
 {% endblock %}

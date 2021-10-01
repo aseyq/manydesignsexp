@@ -32,4 +32,4 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    timeout = models.BooleanField()

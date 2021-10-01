@@ -3,8 +3,8 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class Screenblock(Page):
+class Timeoutblock(Page):
     pass
 
 
-page_sequence = [Screenblock]
+page_sequence = [Timeoutblock]

@@ -26,8 +26,8 @@ class Grouping(WaitPage):
 
 
 class Captcha(Page):
-#    timeout_seconds = 240
-    timeout_seconds = 90
+    def get_timeout_seconds(self):
+        return self.session.config['instructions_page_timeout_seconds']
 
     form_model = 'player'
     form_fields = ['user_input']
@@ -44,6 +44,19 @@ class Captcha(Page):
 class Decision(Page):
     form_fields = ['takeaway']
     form_model = "player"
+
+
+    def get_timeout_seconds(self):
+        return self.session.config['decision_page_timeout_seconds']
+
+    def before_next_page(self):
+        if self.timeout_happened:
+            self.player.timeout = True
+
+    def app_after_this_page(self, upcoming_apps):
+        if self.player.timeout:
+            return "timeoutblock"
+
 
 class ResultsWait(WaitPage):
     after_all_players_arrive = "final_calculation"

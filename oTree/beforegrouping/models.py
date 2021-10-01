@@ -37,6 +37,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     waiting_time = models.IntegerField()
+    timeout = models.BooleanField()
     
 
     def set_arrival_time(self):

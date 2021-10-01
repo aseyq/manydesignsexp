@@ -11,7 +11,7 @@
        location.href = "{{ session.config.completion_url }}";
    };
   </script>
-  <!--  <meta http-equiv="refresh" content="120; url={{ session.config.completion_url }}" />  --> 
+  <meta http-equiv="refresh" content="{{ session.config.results_page_redir_sec }}; url={{ session.config.completion_url }}" /> 
 
   {% if session.config.competition %}
     {% include "./res_competition.html" %}

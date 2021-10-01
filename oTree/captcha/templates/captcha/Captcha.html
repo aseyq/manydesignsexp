@@ -6,7 +6,21 @@
 {% endblock %}
 
 {% block content %}
-  <div class="alert alert-primary" id="alert_next_captcha" role="alert">
+  <style>
+   .otree-timer {
+       display: none;
+   }
+  </style>
+
+  <div class="alert alert-primary">
+    <p> This stage ends in:
+        <span style="font-weight: bold">
+          <span class="otree-timer__time-left"></span></br>
+After the time is up, you will be redirected to next stage.
+        </span>
+    </p>
+</div>
+<div class="alert alert-primary" id="alert_next_captcha" role="alert">
     Submitted. Loading next captcha...
   </div>
   <style>

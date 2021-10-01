@@ -63,6 +63,10 @@ class Group(BaseGroup):
             p.payoff_before = c(p.points * self.session.config['real_world_currency_per_point'])
 
         # selecting the dictator
+
+        # only select a dictator if a person is not timed out
+        non_timeout_ids = [p.id_in_group for p in players_in_group if p.timeout is False]
+        print(non_timeout_ids)
         self.selected_id_in_group = random.choice(range(1,Constants.players_per_group+1))
         self.selected_takeaway = self.get_player_by_id(self.selected_id_in_group).takeaway
 
@@ -117,6 +121,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    timeout = models.BooleanField()
     visible_name = models.StringField()
     # captcha
     random_file = models.StringField()
