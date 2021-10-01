@@ -2,8 +2,8 @@ from os import environ
 
 
 common_app_sequence = [
-    'prolific_id', 
-    'instructions',
+#    'prolific_id', 
+#    'instructions',
     'beforegrouping',
     'captcha', 
     'notmatched',
@@ -23,7 +23,7 @@ matching_timeout_mins = 10 # minutes
 beforegrouping_page_timeout_seconds = 300 # seconds
 prolific_id_page_timeout_seconds = 180 # seconds
 results_page_redir_sec = 180 # seconds
-decision_page_timeout_seconds = 300 # seconds
+decision_page_timeout_seconds = 30000 # seconds
 instructions_page_timeout_seconds = 300# seconds
 captcha_page_timeout_seconds = 90 # seconds
 matched_page_timeout_seconds = 90 # seconds

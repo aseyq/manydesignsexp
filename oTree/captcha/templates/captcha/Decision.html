@@ -2,23 +2,23 @@
 {% load otree static %}
 
 {% block title %}
-Stage 3 - The Decision Stage
+  Stage 3 - The Decision Stage
 {% endblock %}
 
 
 {% block styles %}
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-<style>
- #custom-handle {
-     width: 3em;
-     height: 1.6em;
-     top: 50%;
-     margin-top: -.8em;
-     text-align: center;
-     line-height: 1.6em;
- }
-</style>
+  <style>
+   #custom-handle {
+       width: 3em;
+       height: 1.6em;
+       top: 50%;
+       margin-top: -.8em;
+       text-align: center;
+       line-height: 1.6em;
+   }
+  </style>
 {% endblock %}
 
 
@@ -65,45 +65,69 @@ Stage 3 - The Decision Stage
 {% block content %}
   <div class="container">
     <div class="row">
-In the Decision Stage, you will be offered the opportunity to take away a percentage of the
-{% if session.config.competition %} competitors 
-{% else %} group members 
-{% endif %}
+      <p>
+        In this stage, you are offered the option to take away a percentage of the earnings of 
+        {% if session.config.competition %} your competitors in the group.
+        {% else %} other group members. 
+        {% endif %}
+      </p>
+      <p>
+        <strong> If you are selected as the "decision maker", the percentage you decide to take from other participants will be subtracted from the earnings of the other participants in your group, and will be added to your final payment. </strong>
+      </p>
+      <ul>
+        <li class="m-2">  Only one participant in the group will be selected as the decision maker randomly and the earnings will be redustributed according to the decision maker's choice.  The choices by the others will not affect the final earnings. </li>
+        <li class="m-2"> The others will not know whether you are selected as the decision maker, or the percentage you have chosen.</li>
+        <li  class="m-2"> The final earnings will be visible in the results page{% if session.config.competition %} and they will determine the ranking of the players in the group{% endif %}.
+        </li>
+
+
+      </ul>
+
     </div>
 
     <div class="row">
 
       <div class="col">
+        <h4> Please select the percentage you would take from the others: </h4>
         <div id="confirmation" class="alert-primary m-5" style="display:none">
-          <p class="m-2">
+          <p class="m-2 p-2">
             You decided to take <span id="takentext2">0</span>%. The rest will be &nbsp;<span id="resttext2"  class="resttext">100</span>% of what they earned previously <br/>
- Do you want to continue? </p>
+            Do you want to continue? </p>
 
           <button class="btn btn-primary m-3">
             Yes. Continue.
           </button>
 
           <button type="button" class="btn btn-primary m-3" onclick="hideConf()">
-            No. Go back
+            No. Go back.
           </button>
         </div>
         <div id="sliderandinfo">
-      <div id="slider" class="m-5">
-        <div id="custom-handle" class="ui-slider-handle"></div>
-      </div>
-    <div class="row mt-4">
-      <p>
-        I would like to take&nbsp;<span id="takentext1"  class="takentext">0</span>% of each of the other participants. </p>
-
-      <p>
-        The amount they earn will be &nbsp;<span id="resttext1" class="resttext">100</span>% of the what they earned from the effort stage.</p>
-    </div>
+          <div id="slider" class="m-5">
+            <div id="custom-handle" class="ui-slider-handle"></div>
+          </div>
         </div>
       </div>
     </div>
-    <button id="selectbutton" type="button" class="btn btn-primary m-3" onclick="showConf()">
-      Select
-    </button>
+      <div class="row">
+        <div class="col justify-content-center align-items-center">
+          <div class="card">
+            <div class="card-body">
+              <h5>
+                I would like to take&nbsp;<span id="takentext1"  class="takentext">0</span>% of each of the other participants. </h5>
+
+              Their final earnings will be &nbsp;<span id="resttext1" class="resttext">100</span>% of the what they actually earned in the effort stage.
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="selectbutton" type="button" class="btn btn-primary m-3" onclick="showConf()">
+    Select
+  </button>
   </div>
   <input type="hidden" name="takeaway" id="takeaway" />
 
