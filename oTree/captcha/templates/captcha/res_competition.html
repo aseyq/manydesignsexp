@@ -111,13 +111,13 @@
 <tbody>
 <tr>
   <td></td>
+  {% if ranked.ids.1 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
   <td class="name">    Player {{ ranked.names.1 }} <br>
-    {% if ranked.ids.1 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
     {{ranked.payoffs.1 | c }} <br></td>
 
   <td class="name">
-    Player {{ ranked.names.0 }} <br>
     {% if ranked.ids.0 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
+    Player {{ ranked.names.0 }} <br>
     {{ranked.payoffs.0 | c }} <br>
     <img class="goldmedalimg" src="{% static "captcha/goldmedal.png" %}"/></td>
 
@@ -136,8 +136,8 @@
   <td class="golden"></td>
 
   <td class="name">
-    Player {{ ranked.names.2 }} <br>
     {% if ranked.ids.2 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
+    Player {{ ranked.names.2 }} <br>
     {{ranked.payoffs.2 | c }} <br>
   </td>
 
@@ -146,8 +146,8 @@
 <tr>
 
   <td class="name">    
-Player {{ ranked.names.3 }} <br>
     {% if ranked.ids.3 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
+    Player {{ ranked.names.3 }} <br>
     {{ranked.payoffs.3 | c }} <br></td>
 
   <td class="silver"></td>
