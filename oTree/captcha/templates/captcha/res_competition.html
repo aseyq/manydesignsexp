@@ -111,8 +111,10 @@
 <tbody>
 <tr>
   <td></td>
-  {% if ranked.ids.1 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
-  <td class="name">    Player {{ ranked.names.1 }} <br>
+
+  <td class="name">    
+    {% if ranked.ids.1 == player.id_in_group %} <strong>(YOU)</strong> <br> {% endif %}
+    Player {{ ranked.names.1 }} <br>
     {{ranked.payoffs.1 | c }} <br></td>
 
   <td class="name">
@@ -176,7 +178,6 @@
 </tr>
 
 <tr>
-
 
   <td class="loser"><span class="rank4"> 4</span></td>
 

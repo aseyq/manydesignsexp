@@ -27,7 +27,7 @@ class Grouping(WaitPage):
 
 class Captcha(Page):
 #    timeout_seconds = 240
-    timeout_seconds = 60 * 1
+    timeout_seconds = 90
 
     form_model = 'player'
     form_fields = ['user_input']
