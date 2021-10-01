@@ -2,8 +2,8 @@ from os import environ
 
 
 common_app_sequence = [
-#    'prolific_id', 
-#    'instructions',
+    'prolific_id', 
+    'instructions',
     'beforegrouping',
     'captcha', 
     'notmatched',
@@ -12,11 +12,13 @@ common_app_sequence = [
 ]
 
 # Parameters - Also should be added to SESSION_CONFIGS or SESSION_CONFIG_DEFAULTS
-#completion_url = "https://app.prolific.co/submissions/complete?cc=572FB13C"
-completion_url = "https://app.prolific.co/submissions/complete?cc=H9ZJ3RQA"
+completion_url = "https://app.prolific.co/submissions/complete?cc=572FB13C"
 
+# not necessary due to ManyDesigns randomization-ask
+# gives a random waittime before matching
 random_wait_min_sec = 1
-random_wait_max_sec = 3
+random_wait_max_sec = 1
+
 showup_fee = 1.30
 currency_conversion = 0.1
 
@@ -28,7 +30,7 @@ results_page_redir_sec = 180 # seconds
 decision_page_timeout_seconds = 240 # seconds
 instructions_page_timeout_seconds = 300# seconds
 captcha_page_timeout_seconds = 90 # seconds
-matched_page_timeout_seconds = 15 # seconds
+matched_page_timeout_seconds = 10 # seconds
 
 SESSION_CONFIGS = [
     dict(
@@ -80,12 +82,12 @@ SESSION_CONFIG_DEFAULTS = dict(
 
 ROOMS = [
     dict(
-        name='study_LdLEdcGEqDb',
-        display_name='Control Room',
+        name='study_room1',
+        display_name='Room 1',
     ),
     dict(
-        name='study_NdLEdcGEqDb',
-        display_name='Command Room'
+        name='study_room2',
+        display_name='Command Room 2'
     ),
 ]
 

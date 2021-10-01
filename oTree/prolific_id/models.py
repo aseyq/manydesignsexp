@@ -33,10 +33,11 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     prolific_id = models.StringField(label="Your Prolific ID:")
+    timeout = models.BooleanField()
 
     def prolific_id_error_message(self, value):
         if not value.isalnum():
-            return "Your Prolific ID contains characters other than alphanumeric characters. Please check your submissin again"
+            return "Your Prolific ID contains characters other than alphanumeric characters. Please recheck your entry."
 
         if not len(value) == 24:
-            return "Your Prolific ID has a wrong length. Please check it again"
+            return "Your Prolific ID has the wrong length. Please recheck."

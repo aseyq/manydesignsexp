@@ -1,3 +1,5 @@
+{% load otree static %}
+
 <br>
 <div class="card-header bg-transparent mainheader">
   <h3 class="card-title font-weight-bold mt-3 mb-3">
@@ -17,6 +19,10 @@
  will be shown a series of <strong>captchas</strong>, i.e. an image of a sequence of numbers and letters. You should try to input these letters in the given field. After each input, whether your entry was correct or not, you will be shown another captcha.
 </p>
 
+<figure>
+  <img id="effortimage" src="{% static 'instructions/effort_task.png' %}"><br>
+  <figurecaption> An example from the Effort Stage </figurecaption>
+</figure>
 <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
 
 <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>

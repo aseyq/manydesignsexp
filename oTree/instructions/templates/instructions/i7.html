@@ -15,18 +15,18 @@
   {% endif %}
   earnings</strong>.</p>
 <p>
- After the decision stage one participant in the group will be selected randomly and the choice of the selected member will be implemented. Participants will not know which member’s choice is implemented, but they will see the final outcome in the feedback stage.
+  After the decision stage one participant in the group will be selected randomly as the decision-maker. The choice of the decisoin-maker will be implemented. Participants will not know which member is the decision-maker, but they will see the final outcome in the feedback stage.
 </p>
 
-<p>
-  If your decision will be implemented, the amount taken away from other 
-  {% if session.config.competition %}
-    competitors'
-  {% else %}
-    members'
-  {% endif %}
- earnings will be subtracted to their final earnings and will be added to your final earning.
+
+<strong> If you are selected as the "decision maker", the percentage you decide to take from other participants will be subtracted from the earnings of the other participants in your group, and will be added to your final earnings. </strong>
 </p>
+<ul>
+  <li class="m-2">  Only one participant in the group will be selected as the decision-maker randomly. The choices by the others will not affect the final earnings. </li>
+  <li class="m-2"> The others will not know whether you are selected as the decision maker, or the percentage you have chosen.</li>
+  <li  class="m-2"> Only the final earnings will be visible in the results page{% if session.config.competition %} and they will determine the ranking of the players in the group{% endif %}.
+  </li>
+
 
 <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
 

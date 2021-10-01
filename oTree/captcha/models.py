@@ -65,8 +65,13 @@ class Group(BaseGroup):
         # selecting the dictator
 
         # only select a dictator if a person is not timed out
-        non_timeout_ids = [p.id_in_group for p in players_in_group if p.timeout is False]
-        print(non_timeout_ids)
+        # I gave up from this. I will initialize everyone with 0 takeway 
+        # if somebody is timeout, the data is out anyways
+#        non_timeout_ids = [p.id_in_group for p in players_in_group if p.timeout is False]
+#        print("non_timeout_ids", non_timeout_ids)
+
+
+
         self.selected_id_in_group = random.choice(range(1,Constants.players_per_group+1))
         self.selected_takeaway = self.get_player_by_id(self.selected_id_in_group).takeaway
 
@@ -121,7 +126,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    timeout = models.BooleanField()
+    timeout = models.BooleanField(initial=False)
     visible_name = models.StringField()
     # captcha
     random_file = models.StringField()
@@ -133,7 +138,7 @@ class Player(BasePlayer):
 
     # decision
     competition = models.BooleanField()
-    takeaway = models.IntegerField()
+    takeaway = models.IntegerField(initial=0)
     is_dictator = models.BooleanField()
 
     # results
