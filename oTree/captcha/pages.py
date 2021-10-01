@@ -46,7 +46,7 @@ class Decision(Page):
     form_model = "player"
 
 class ResultsWait(WaitPage):
-    after_all_players_arrive = "calculate_payoffs"
+    after_all_players_arrive = "final_calculation"
 
 class Results(Page):
     def vars_for_template(self):

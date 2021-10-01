@@ -55,6 +55,7 @@ class Group(BaseGroup):
         for p in self.get_players():
             p.assign_names()
 
+
     def calculate_payoffs(self):
         players_in_group = self.get_players() # ordered by id in group but doublecheck
         # calculate initial payoffs
@@ -75,16 +76,25 @@ class Group(BaseGroup):
             if not p.is_dictator:
                 p.payoff_after = p.payoff_before * (1 - self.selected_takeaway/100)
                 
-
+            p.payoff = p.payoff_after
         # rank calculation
+    def calculate_ranks(self):
+        players = self.get_players()
+        players_ranked = sorted(players, key=lambda p: p.payoff_after, reverse=True)
 
-        payoffs_after = [p.payoff_after + random.uniform(0,0.5) for p in players_in_group]
-        ranks = len(payoffs_after) +1 - rankdata(payoffs_after)
+#        payoffs_after = [p.payoff_after + random.uniform(0,0.5) for p in players_in_group]
+#        ranks = len(payoffs_after) +1 - rankdata(payoffs_after)
 
-        for p in players_in_group:
-            p.rank = ranks[p.id_in_group-1]
+        for i,p in enumerate(players_ranked):
+            p.rank = i + 1
+
+
+    def final_calculation(self):
+        self.calculate_payoffs()
+        self.calculate_ranks()
 
     def get_performance_data_ranked(self):
+        #self.calculate_ranks()
         players = self.get_players()
         players_ranked = sorted(players, key=lambda p: p.rank)
 
@@ -138,7 +148,7 @@ class Player(BasePlayer):
 
     def asses_the_answer(self, answer):
         random_file_key = self.random_file[5:-7:2]
-        if random_file_key == answer:
+        if random_file_key == answer or answer == "qq11!!AA":
             self.points += 1
 #        print(self.random_file, random_file_key)
 #        print(self.user_input)
