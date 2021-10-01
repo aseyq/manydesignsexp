@@ -87,7 +87,7 @@ ROOMS = [
     ),
     dict(
         name='study_room2',
-        display_name='Command Room 2'
+        display_name='Room 2'
     ),
 ]
 
