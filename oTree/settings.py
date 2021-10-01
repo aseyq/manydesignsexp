@@ -12,7 +12,8 @@ common_app_sequence = [
 ]
 
 # Parameters - Also should be added to SESSION_CONFIGS or SESSION_CONFIG_DEFAULTS
-completion_url = "https://app.prolific.co/submissions/complete?cc=572FB13C"
+#completion_url = "https://app.prolific.co/submissions/complete?cc=572FB13C"
+completion_url = "https://app.prolific.co/submissions/complete?cc=H9ZJ3RQA"
 
 random_wait_min_sec = 1
 random_wait_max_sec = 3
