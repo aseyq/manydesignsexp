@@ -67,6 +67,7 @@ class Group(BaseGroup):
         # only select a dictator if a person is not timed out
         # I gave up from this. I will initialize everyone with 0 takeway 
         # if somebody is timeout, the data is out anyways
+        # it is a very very rare case 
 #        non_timeout_ids = [p.id_in_group for p in players_in_group if p.timeout is False]
 #        print("non_timeout_ids", non_timeout_ids)
 

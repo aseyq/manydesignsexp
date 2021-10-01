@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-  Stage 3 - The Decision Stage
+  Stage 2 - The Decision Stage
 {% endblock %}
 
 
@@ -72,11 +72,10 @@
         {% endif %}
       </p>
       <p>
-        <strong> If you are selected as the "decision maker", the percentage you decide to take from other participants will be subtracted from the earnings of the other participants in your group, and will be added to your final payment. </strong>
+        <strong> If you are selected as the decision-maker, the percentage you decide to take from other participants will be subtracted from the earnings of the other participants in your group, and will be added to your final payment. </strong>
       </p>
       <ul>
-        <li class="m-2">  Only one participant in the group will be selected as the decision-maker. The choices by the others will not affect the final earnings. </li>
-        <li class="m-2"> The others will not know whether you are selected as the decision maker, or the percentage you have chosen.</li>
+        <li class="m-2"> The others will not know whether you are selected as the decision-maker, or the percentage you have chosen.</li>
         <li  class="m-2"> The final earnings will be visible in the results page{% if session.config.competition %} and they will determine the ranking of the players in the group{% endif %}.
         </li>
 
@@ -88,11 +87,11 @@
     <div class="row">
 
       <div class="col">
-        <h4> Please select the percentage you would take from the others: </h4>
+        <h4> Please select the percentage of the earnings you would like to take from the others: </h4>
         <div id="confirmation" class="alert-primary m-5" style="display:none">
           <p class="m-2 p-2">
-            You decided to take <span id="takentext2">0</span>%. The rest will be &nbsp;<span id="resttext2"  class="resttext">100</span>% of what they earned previously <br/>
-            Do you want to continue? </p>
+            You decided to take <span id="takentext2">0</span>% from the others if you are selected as the decision-maker. The rest will be &nbsp;<span id="resttext2"  class="resttext">100</span>% of what they earned previously. <br/>
+            Do you want to confirm? </p>
 
           <button class="btn btn-primary m-3">
             Yes. Continue.

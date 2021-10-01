@@ -16,7 +16,6 @@
 
     {% blocktrans trimmed with players_per_group=Constants.players_per_group num_rounds=Constants.num_rounds %}
       You will be grouped in {{ players_per_group }} players.
-      {{ num_rounds }} rounds, you will play together with these players.
     {% endblocktrans %}
 
   </h5>
@@ -24,7 +23,7 @@
 <br/>
 
   {% blocktrans trimmed %}
-    If we won't be able match you in the following <span id="remaining"></span> minutes,
+    If we won't be able to match you in the following <span id="remaining"></span> minutes,
     you will be redirected to the finish page and get paid for the fixed amount.
   {% endblocktrans %}
 
