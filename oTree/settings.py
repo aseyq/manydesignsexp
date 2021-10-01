@@ -80,11 +80,11 @@ SESSION_CONFIG_DEFAULTS = dict(
 ROOMS = [
     dict(
         name='study_LdLEdcGEqDb',
-        display_name='ManyDesigns - Control',
+        display_name='Control Room',
     ),
     dict(
         name='study_NdLEdcGEqDb',
-        display_name='ManyDesigns - Competition'
+        display_name='Command Room'
     ),
 ]
 
