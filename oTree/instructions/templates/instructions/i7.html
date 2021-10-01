@@ -1,0 +1,33 @@
+<br>
+<div class="card-header bg-transparent mainheader">
+  <h3 class="card-title font-weight-bold mt-3 mb-3">
+    Instructions for Stage 2 - The Decision Stage
+  </h3>
+</div>
+
+<br>
+<p>
+  In The Decision Stage <strong>you will be offered the opportunity to take away a percentage (from 0 to 100%) of the group 
+  {% if session.config.competition %}
+    competitors' 
+  {% else %}
+    members'
+  {% endif %}
+  earnings</strong>.</p>
+<p>
+ After the decision stage one participant in the group will be selected randomly and the choice of the selected member will be implemented. Participants will not know which member’s choice is implemented, but they will see the final outcome in the feedback stage.
+</p>
+
+<p>
+  If your decision will be implemented, the amount taken away from other 
+  {% if session.config.competition %}
+    competitors'
+  {% else %}
+    members'
+  {% endif %}
+ earnings will be subtracted to their final earnings and will be added to your final earning.
+</p>
+
+<button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
+
+<button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>

@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-  Instructions
+  Instructions {% if session.config.competition %} Competition {% else %} Control {% endif %}
 {% endblock %}
 
 {% block scripts %}
@@ -37,58 +37,49 @@
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link active" id="part1-tab" data-toggle="tab"
-         href="#part1" role="tab" aria-controls="part1" onclick="topFunction()">Welcome</a>
+         href="#part1" role="tab" aria-controls="part1" onclick="topFunction()">1</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part2-tab" data-toggle="tab"
-         href="#part2" role="tab" aria-controls="part2" onclick="topFunction()">Grouping</a>
+         href="#part2" role="tab" aria-controls="part2" onclick="topFunction()">2</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part3-tab" data-toggle="tab"
-         href="#part3" role="tab" aria-controls="part3" onclick="topFunction()">Pictures</a>
+         href="#part3" role="tab" aria-controls="part3" onclick="topFunction()">3</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part4-tab" data-toggle="tab"
-         href="#part4" role="tab" aria-controls="part4" onclick="topFunction()">Candidate Pictures</a>
+         href="#part4" role="tab" aria-controls="part4" onclick="topFunction()">4</a>
     </li>
 
     <li class="nav-item">
-      <a style="pointer-events: none; cursor: default;" class="nav-link" id="part5_1-tab" data-toggle="tab"
-         href="#part5_1" role="tab" aria-controls="part5_1" onclick="topFunction()">Similarity</a>
+      <a style="pointer-events: none; cursor: default;" class="nav-link" id="part5-tab" data-toggle="tab"
+         href="#part5" role="tab" aria-controls="part5" onclick="topFunction()">5</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part6-tab" data-toggle="tab"
-         href="#part6" role="tab" aria-controls="part6" onclick="topFunction()">Voting</a>
+         href="#part6" role="tab" aria-controls="part6" onclick="topFunction()">6</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part7-tab" data-toggle="tab"
-         href="#part7" role="tab" aria-controls="part7" onclick="topFunction()">Voting Screenshot</a>
+         href="#part7" role="tab" aria-controls="part7" onclick="topFunction()">7</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part8-tab" data-toggle="tab"
-         href="#part8" role="tab" aria-controls="part8" onclick="topFunction()">Voting Example</a>
+         href="#part8" role="tab" aria-controls="part8" onclick="topFunction()">8</a>
     </li>
 
     <li class="nav-item">
       <a style="pointer-events: none; cursor: default;" class="nav-link" id="part9-tab" data-toggle="tab"
-         href="#part9" role="tab" aria-controls="part9" onclick="topFunction()">Voting Rounds</a>
+         href="#part9" role="tab" aria-controls="part9" onclick="topFunction()">9</a>
     </li>
 
-    <li class="nav-item">
-      <a style="pointer-events: none; cursor: default;" class="nav-link" id="part10-tab" data-toggle="tab"
-         href="#part10" role="tab" aria-controls="part10" onclick="topFunction()">Voting Outcome and Payoffs</a>
-    </li>
-
-    <li class="nav-item">
-      <a style="pointer-events: none; cursor: default;" class="nav-link active" id="part11-tab" data-toggle="tab"
-         href="#part11" role="tab" aria-controls="part11" onclick="topFunction()">Voting Control Questions</a>
-    </li>
   </ul>
   <!-- end navigation -->
 
@@ -117,120 +108,47 @@
     </div>
 
 
-    <div class="tab-pane" id="part3" role="tabpanel" aria-labelledby="part4-tab">
+    <div class="tab-pane" id="part4" role="tabpanel" aria-labelledby="part4-tab">
 
       {% include "./i4.html" %}
 
     </div>
 
-
-
-
-    <div class="tab-pane" id="part5_1" role="tabpanel" aria-labelledby="part5_1-tab">
-
-      <br>
-      <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3 mb-3">How to evaluate similarity of candidate pictures to target picture?</h3>
-      </div>
-      <br>
-
-sss
-
-      <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
-
+   <div class="tab-pane" id="part5" role="tabpanel" aria-labelledby="part5-tab">
+      {% include "./i5.html" %}
     </div>
 
     <div class="tab-pane" id="part6" role="tabpanel" aria-labelledby="part6-tab">
-
-      <br>
-      <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3">How to decide in your group?: Voting</h3>
-      </div>
-      <br>
-
-qqq
-
-      <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
-
+      {% include "./i6.html" %}
     </div>
 
 
     <div class="tab-pane" id="part7" role="tabpanel" aria-labelledby="part7-tab">
-
-      <br>
-      <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3">How to vote in your group?</h3>
-      </div>
-      <br>
-
-mmm
-
-      <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
-
+      {% include "./i7.html" %}
     </div>
-
 
     <div class="tab-pane" id="part8" role="tabpanel" aria-labelledby="part8-tab">
-      <br>
-      <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3">A Voting Example</h3>
-      </div>
-      <br>
-
-nnn
-
-      <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
-
+      {% include "./i8.html" %}
     </div>
 
-
-    <div class="tab-pane" id="part9" role="tabpanel" aria-labelledby="part9-tab">
-
-      <br>
-      <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3">How many pictures you will evaluate?</h3>
-      </div>
-      <br>
-
-hhh
-
-      <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
-    </div>
-
-
-    <div class="tab-pane" id="part10" role="tabpanel" aria-labelledby="part10-tab">
+    <div class="tab-pane show" id="part9" role="tabpanel" aria-labelledby="part9-tab">
 
       <br>
       <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3">How many points I will earn from voting stage?</h3>
+        <h3 class="card-title font-weight-bold mt-3"> End of Instructions</h3>
       </div>
       <br>
 
-lll
+      <p>
+        You have reached the end of the instructions. After you click on <kbd>Start the experiment</kbd> button, you will be matched with other participants.
+      </p>
+
+      <p>
+This may take few minutes for other participants to join the experiment. You will start the experiment immediately after you are matched with other people. For that reason, please stay in front of the computer and please do not switch tabs or minimize the browser.
+      </p>
 
       <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button onclick="topFunction()" type="button" class="nexttab btn-primary btn next">Next</button>
-
-    </div>
-
-
-    <div class="tab-pane show" id="part11" role="tabpanel" aria-labelledby="part11-tab">
-
-      <br>
-      <div class="card-header bg-transparent mainheader">
-        <h3 class="card-title font-weight-bold mt-3"> Review questions about voting stage</h3>
-      </div>
-      <br>
-
-qqq
-
-      <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>
-      <button class="btn-success btn next"> Submit Answers</button>
+      <button class="btn-success btn next"> Start the experiment</button>
 
 
     </div>

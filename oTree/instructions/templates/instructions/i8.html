@@ -1,20 +1,20 @@
 <br>
 <div class="card-header bg-transparent mainheader">
   <h3 class="card-title font-weight-bold mt-3 mb-3">
-    Instructions for Stage 1 - The Effort Stage
+    Instructions for Stage 3 - The Feedback Stage
   </h3>
 </div>
 
 <br>
 <p>
-  In this stage, you, and 
+  In The Feedback Stage you  will see the final earnings 
   {% if session.config.competition %}
-    your competitors
+    and the ranking of you and your competitors.
   {% else %}
-    other group members
-  {% endif %}
+    of you and other group members.
 
- will be shown a series of <strong>captchas</strong>, i.e. an image of a sequence of numbers and letters. You should try to input these letters in the given field. After each input, whether your entry was correct or not, you will be shown another captcha.
+  {% endif %}
+  (See example below.) 
 </p>
 
 <button onclick="topFunction()" type="button" class="prevtab btn-primary btn back">Back</button>

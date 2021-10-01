@@ -3,7 +3,7 @@ from os import environ
 
 common_app_sequence = [
 #    'prolific_id', 
-#    'instructions',
+    'instructions',
     'beforegrouping',
 #    'grouping', ## REMOVED
     'captcha', 
